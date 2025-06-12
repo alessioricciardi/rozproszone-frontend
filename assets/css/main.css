@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@plugin 'daisyui';
+
+/* Tailwindcss dodaje style dla lista jako none, ten kod pozostawia możliwość domyślnego wstawiania list */
+@layer base {
+  ul,
+  ol,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    all: revert;
+  }
+
+  ul[data-type='taskList'] input[type='checkbox'] {
+    @apply size-3.5 cursor-pointer rounded border-gray-400 align-middle accent-blue-600;
+  }
+
+  .ProseMirror:focus {
+    @apply outline-none;
+  }
+
+  ul[data-type='taskList'] {
+    @apply ml-0 list-none p-0;
+  }
+
+  ul[data-type='taskList'] li {
+    @apply mb-1 ml-0 flex items-center gap-2;
+  }
+
+  body {
+    @apply text-gray-900;
+  }
+}
+
+body {
+  font-family: 'Poppins';
+  user-select: none;
+}
+
+.article {
+  @apply prose max-w-none
+}
+
+.article a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
