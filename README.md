@@ -1,75 +1,54 @@
-# Nuxt Minimal Starter
+# Instrukcja uruchomienia projektu
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 1. Pobranie modułów
 
-## Setup
-
-Make sure to install dependencies:
+Uruchom w terminalu poniższe polecenie, aby zainstalować wszystkie niezbędne zależności:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+---
 
-Start the development server on `http://localhost:3000`:
+## 2. Instalacja certyfikatów SSL dla Nuxt Dev Server
+
+Aby umożliwić działanie serwera deweloperskiego Nuxt na HTTPS, wykonaj następujące kroki:
+
+### a) Pobierz i zainstaluj narzędzie `mkcert`
+
+Narzędzie `mkcert` pozwala tworzyć lokalne certyfikaty SSL zaufane przez system.
+
+Pobierz `mkcert` ze strony:  
+[https://github.com/FiloSottile/mkcert/releases](https://github.com/FiloSottile/mkcert/releases)
+
+### b) Zainstaluj lokalny urząd certyfikacji (CA)
+
+W terminalu wykonaj:
 
 ```bash
-# npm
-npm run dev
+mkcert -install
+```
 
-# pnpm
+### c) Wygeneruj certyfikaty dla `localhost`
+
+W folderze z projektem uruchom:
+
+```bash
+mkcert localhost
+```
+
+W wyniku powstaną dwa pliki certyfikatów, które należy umieścić w katalogu projektu.
+
+---
+
+## 3. Uruchomienie projektu
+
+Po zainstalowaniu zależności i certyfikatów, uruchom serwer developerski Nuxt poleceniem:
+
+```bash
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+---
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+**Gotowe!** Teraz możesz otworzyć projekt w przeglądarce pod adresem `https://localhost` z obsługą HTTPS.
