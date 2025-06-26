@@ -1,8 +1,9 @@
-# Instrukcja uruchomienia projektu
 
-## 1. Pobranie modułów
+# Project Startup Instructions
 
-Uruchom w terminalu poniższe polecenie, aby zainstalować wszystkie niezbędne zależności:
+## 1. Downloading modules
+
+Run the following command in the terminal to install all necessary dependencies:
 
 ```bash
 pnpm install
@@ -10,40 +11,40 @@ pnpm install
 
 ---
 
-## 2. Instalacja certyfikatów SSL dla Nuxt Dev Server
+## 2. Installing SSL certificates for the Nuxt Dev Server
 
-Aby umożliwić działanie serwera deweloperskiego Nuxt na HTTPS, wykonaj następujące kroki:
+To enable the Nuxt development server to run on HTTPS, follow these steps:
 
-### a) Pobierz i zainstaluj narzędzie `mkcert`
+### a) Download and install the `mkcert` tool
 
-Narzędzie `mkcert` pozwala tworzyć lokalne certyfikaty SSL zaufane przez system.
+The `mkcert` tool allows you to create local SSL certificates trusted by your system.
 
-Pobierz `mkcert` ze strony:  
+Download `mkcert` from:  
 [https://github.com/FiloSottile/mkcert/releases](https://github.com/FiloSottile/mkcert/releases)
 
-### b) Zainstaluj lokalny urząd certyfikacji (CA)
+### b) Install the local Certificate Authority (CA)
 
-W terminalu wykonaj:
+Run the following command in your terminal:
 
 ```bash
 mkcert -install
 ```
 
-### c) Wygeneruj certyfikaty dla `localhost`
+### c) Generate certificates for `localhost`
 
-W folderze z projektem uruchom:
+In your project folder, run:
 
 ```bash
 mkcert localhost
 ```
 
-W wyniku powstaną dwa pliki certyfikatów, które należy umieścić w katalogu projektu.
+This will generate two certificate files which should be placed in your project directory.
 
 ---
 
-## 3. Uruchomienie projektu
+## 3. Running the project
 
-Po zainstalowaniu zależności i certyfikatów, uruchom serwer developerski Nuxt poleceniem:
+After installing dependencies and certificates, start the Nuxt development server by running:
 
 ```bash
 pnpm dev
@@ -51,4 +52,4 @@ pnpm dev
 
 ---
 
-**Gotowe!** Teraz możesz otworzyć projekt w przeglądarce pod adresem `https://localhost` z obsługą HTTPS.
+**Done!** You can now open the project in your browser at `https://localhost` with HTTPS support.
